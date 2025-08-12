@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const imagePrefix = process.env.PAGES_BASE_PATH || ''
+const imagePrefix = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 export default function Home() {
   return (
