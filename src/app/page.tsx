@@ -1,11 +1,13 @@
 import Image from "next/image";
 
+const imagePrefix = process.env.PAGES_BASE_PATH || ''
+
 export default function Home() {
   return (
     <div className="flex flex-row justify-center">
       <div className="flex flex-col">
         <Image
-          src="/headshot.svg"
+          src={`${imagePrefix}/headshot.svg`}
           alt="headshot"
           width={200}
           height={200}
@@ -20,7 +22,7 @@ export default function Home() {
           <a href="https://github.com/Hipposhark" target="_blank" rel="noopener noreferrer">
             <Image
               aria-hidden
-              src="/github_icon.svg"
+              src={`${imagePrefix}/github_icon.svg`}
               alt="gitHub icon"
               width={24}
               height={24}
@@ -29,7 +31,7 @@ export default function Home() {
           <a href="https://www.linkedin.com/in/edwin-li-5a398b248/" target="_blank" rel="noopener noreferrer">
             <Image
               aria-hidden
-              src="/linkedin_icon.svg"
+              src={`${imagePrefix}/linkedin_icon.svg`}
               alt="linkedin icon"
               width={24}
               height={24}
