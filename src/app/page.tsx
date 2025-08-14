@@ -1,15 +1,12 @@
 import Image from "next/image";
-import headshot from '@/public/headshot.svg';
-import githubIcon from '@/public/github_icon.svg';
-import linkedinIcon from '@/public/linkedin_icon.svg';
-
+import nextConfig from "../../next.config";
 
 export default function Home() {
   return (
     <div className="flex flex-row justify-center">
       <div className="flex flex-col">
         <Image
-          src={headshot}
+          src={`${nextConfig.basePath}/headshot.svg`}
           alt="headshot"
           width={200}
           height={200}
@@ -24,7 +21,7 @@ export default function Home() {
           <a href="https://github.com/Hipposhark" target="_blank" rel="noopener noreferrer">
             <Image
               aria-hidden
-              src={githubIcon}
+              src={`${nextConfig.basePath}/github_icon.svg`}
               alt="gitHub icon"
               width={24}
               height={24}
@@ -33,7 +30,7 @@ export default function Home() {
           <a href="https://www.linkedin.com/in/edwin-li-5a398b248/" target="_blank" rel="noopener noreferrer">
             <Image
               aria-hidden
-              src={linkedinIcon}
+              src={`${nextConfig.basePath}/linkedin_icon.svg`}
               alt="linkedin icon"
               width={24}
               height={24}
