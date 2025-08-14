@@ -6,8 +6,7 @@ const nextConfig: NextConfig = {
   output: "export",
   reactStrictMode: true,
   basePath:  isProd ? "/edwin-li" : "",
-  assetPrefix: isProd ? "/edwin-li" : "",
-  images: { unoptimized: true }
+  assetPrefix: isProd ? "/edwin-li" : ""
 };
 
 export default nextConfig;
