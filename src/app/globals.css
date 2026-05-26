@@ -29,4 +29,28 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-mono);
+  /* Improve readability: increase line-height and comfortable max-width for text blocks */
+  line-height: 1.65;
+}
+
+/* Typographic rhythm */
+p {
+  margin-bottom: 1rem;
+}
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  line-height: 1.2;
+}
+
+/* Add consistent spacing between major sections */
+section {
+  margin-bottom: 2rem;
+}
+
+/* Slightly loosen list spacing for readability */
+ul, ol {
+  margin-bottom: 1rem;
+  line-height: 1.6;
 }

@@ -1,20 +1,30 @@
 import Image from "next/image";
 import { SocialIcon } from "./components/SocialIcon";
+import { ExperienceCard } from "./components/ExperienceCard";
+import { ProjectCard } from "./components/ProjectCard";
+import { SkillBadge } from "./components/SkillBadge";
+
+import { projects } from "@/data/projects";
+import { skillClasses } from "@/data/skillClasses";
+import { experiences } from "@/data/experiences";
 
 export default function Home() {
+
+
+
     return (
-        // <div className="flex flex-row justify-center ">
         <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-16 lg:py-0">
-            <div className="lg:flex lg:justify-between lg:gap-4 lg:items-start">
+            <div className="lg:flex lg:justify-between md:gap-12 lg:gap-36 lg:items-start">
+                {/* left side */}
                 <div className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-24">
 
-                    <div className="flex items-center gap-6 flex-wrap">
+                    <div className="flex items-center gap-8 flex-wrap">
                         <Image
-                            src="/headshot.svg"
+                            src="/headshot2.svg"
                             alt="headshot"
                             width={160}
                             height={160}
-                            className="rounded-full w-40 h-40"
+                            className="rounded w-40 h-40"
                         />
 
                         <div >
@@ -25,18 +35,31 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <h2>ECE Student @ Carnegie Mellon University</h2>
-                    <p>I build computer hardware from first-principles.</p>
+                    {/* <h2>I build production-ready hardware from first principles</h2> */}
+
+
+                    <section className="py-4 md:py-6">
+                        {/* <h1>
+                            ABOUT
+                        </h1> */}
+                        <p>
+                            Hey there! I&apos;m currently a rising third-year studying Electrical & Computer 
+                            Engineering student at CMU and am interested in digital hardware and their
+                            applications in AI. My work spans FPGA and RTL design, embedded systems, 
+                            circuit design, and low-level software. In my free time, I enjoy fishing 
+                            and producing music.
+                        </p>
+                    </section>
 
                     <footer className="row-start-3 flex gap-[24px] flex-col items-center justify-center">
                         <div className="row-start-3 flex gap-[24px] flex-row items-center justify-center">
                             <SocialIcon
                                 href="https://github.com/Hipposhark"
-                                icon="/github_icon.svg"
+                                icon="/icons/github_icon.svg"
                                 alt="GitHub Icon" />
                             <SocialIcon
                                 href="https://www.linkedin.com/in/edwin-li-5a398b248/"
-                                icon="/linkedin_icon.svg"
+                                icon="/icons/linkedin_icon.svg"
                                 alt="LinkedIn Icon" />
 
                         </div>
@@ -44,74 +67,62 @@ export default function Home() {
                     </footer>
                 </div>
 
-                <div className="pt-24 lg:w-[52%] lg:py-24">
+                {/* right side */}
+                <div className="pt-24 lg:w-[60%] lg:py-24">
                     <section>
                         <h1>
-                            About
+                            EXPERIENCES
                         </h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                            enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                            sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                            enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                            sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
+
+                        {experiences.map((experience) => (
+                            <ExperienceCard
+                                key={experience.title}
+                                {...experience} />
+                        ))}
                     </section>
 
                     <section>
                         <h1>
-                            Experience
+                            PROJECTS
+                        </h1>
+                        {projects.map((project) => (
+                            <ProjectCard 
+                                key={project.title}
+                                {...project} />
+                        ))}
+                    </section>
+
+                    <section>
+                        <h1>
+                            SKILLS
                         </h1>
 
-                        {/* experience card component */}
-                        <li>
-                            <div>
-
+                        <div className="w-full p-4 rounded-md bg-[var(--background)] transition hover:brightness-105">
+                            <div className="grid grid-cols-1 gap-4">
+                                {skillClasses.map((skillClass) => (
+                                    <div key={skillClass.class}>
+                                        <h3 className="font-semibold text-sm text-[var(--foreground)] mb-2">{skillClass.class}</h3>
+                                        <div className="flex flex-wrap gap-2">
+                                            {skillClass.skills.map((skill) => (
+                                                <SkillBadge key={skill} skill={skill} />
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
-                        </li>
+                        </div>
 
-                    </section>
-
-                    <section>
-                        <h1>
-                            Projects
-                        </h1>
-
-                        {/* project card component */}
-                    </section>
-
-                    <section>
-                        <h1>
-                            Skills
-                        </h1>
-
-                        {/* skill bullet component */}
-                        <li>
-
-                        </li>
                     </section>
 
 
                     <section>
                         <h1>
-                            Get in Touch!
+                            CONTACT
                         </h1>
                         <p>
-                            Open to internships and research opportunities!
+                            Get in touch by email <a href="mailto:edwinl@andrew.cmu.edu" className="text-[var(--color-primary)] hover:underline">edwinl@andrew.cmu.edu</a>. I am open to internships and research opportunities!
                         </p>
 
-                        
                         {/* button to C.V. */}
                     </section>
                 </div>
