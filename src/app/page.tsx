@@ -44,7 +44,7 @@ export default function Home() {
                         </h1> */}
                         <p>
                             Hey there! I&apos;m currently a rising third-year studying Electrical & Computer 
-                            Engineering student at CMU and am interested in digital hardware and their
+                            Engineering student at CMU and am interested in digital hardware and its
                             applications in AI. My work spans FPGA and RTL design, embedded systems, 
                             circuit design, and low-level software. In my free time, I enjoy fishing 
                             and producing music.

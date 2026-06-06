@@ -34,6 +34,7 @@ export const experiences = [
         "Held weekly office hours to aid with homework and labs, improving student \
             understanding by individualized explanations.",
     ],
+    skills: ["Arduino"]
   },
   {
     title: "Data Acquisitions Subteam Member",
