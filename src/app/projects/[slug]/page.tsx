@@ -5,13 +5,19 @@ import Link from "next/link";
 import { SkillBadge } from "@/app/components/SkillBadge";
 import MasonryGallery from "@/app/components/MasonryGallery";
 
+type ProjectPageProps = {
+  params: Promise<{ slug: string }>;
+};
+
 export async function generateStaticParams() {
     return projects.map(p => ({ slug: p.slug }));
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-    const project = projects.find((p) => p.slug === params.slug);
-    if (!project) return notFound();
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+
+  if (!project) return notFound();
 
     return (
         <main className="mx-auto max-w-5xl px-6 py-12 space-y-12">
