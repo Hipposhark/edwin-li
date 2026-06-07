@@ -9,19 +9,23 @@ export const skillClasses = [
     skills: ["Python", "C/C++", "SystemVerilog", "TypeScript", "Assembly"],
   },
   {
-    class: "Bench Tools",
-    skills: ["Oscilloscopes", "Logic Analyzer", "Signal Generator", "DMMs"],
+    class: "Hardware & Digital Design",
+    skills: ["FPGA Development", "RTL Design", "Digital Logic", "Computer Architecture", "Embedded Systems"],
   },
   {
-    class: "EDA/CAD Tools",
-    skills: ["Altium", "KiCad", "SolidWorks", "Fusion360"],
+    class: "Lab & Bench Tools",
+    skills: ["Oscilloscopes", "Logic Analyzers", "Signal Generators", "Digital Multimeters"],
   },
   {
-    class: "Frontend Development",
-    skills: ["ReactJS", "Tailwind"],
+    class: "EDA & CAD Tools",
+    skills: ["Vivado", "Altium Designer", "KiCad", "SolidWorks", "Fusion 360"],
   },
   {
-    class: "Other Technologies",
-    skills: ["Linux", "Git", "Confluence", "Jira", "LATEX"],
+    class: "Web Development",
+    skills: ["React", "Next.js", "Tailwind CSS"],
+  },
+  {
+    class: "Developer Tools",
+    skills: ["Linux", "Git", "LaTeX", "Confluence", "Jira"],
   },
 ] satisfies readonly SkillClass[];
